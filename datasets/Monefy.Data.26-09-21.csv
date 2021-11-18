@@ -1,0 +1,112 @@
+date,account,category,amount,currency,converted amount,currency,description
+01/08/2021,Ingresos,Despensa,-15,MXN,-15,MXN,Fruta cortada
+01/08/2021,Ingresos,Restaurante/Bar,-50,MXN,-50,MXN,1 Mazapán latte
+01/08/2021,Ingresos,Depósitos,610.02,MXN,610.02,MXN,Reservas
+01/08/2021,Ingresos,Initial balance 'Ingresos',"6,000",MXN,"6,000",MXN,
+02/08/2021,Ingresos,Restaurante/Bar,-49,MXN,-49,MXN,Bionico
+02/08/2021,Ingresos,Restaurante/Bar,-44,MXN,-44,MXN,2 tacos veganos
+02/08/2021,Ingresos,Despensa,-275,MXN,-275,MXN,"900 gr queso panela, 1 kg frutos secos, 1 kg cacaguates, 1 pqt galletas"
+02/08/2021,Ahorros,Initial balance 'Ahorros',"2,076.03",MXN,"2,076.03",MXN,
+03/08/2021,Ingresos,Movilidad,-10,MXN,-10,MXN,Estacionamiento
+03/08/2021,Ingresos,Restaurante/Bar,-38,MXN,-38,MXN,Churritos de grillo
+04/08/2021,Ingresos,Despensa,-450.57,MXN,-450.57,MXN,Despensa
+04/08/2021,Ingresos,Salud e Higiene,-568,MXN,-568,MXN,Aceite corporal
+04/08/2021,Ingresos,Reembolsos,598,MXN,598,MXN,Reembolso de gastos
+07/08/2021,Ingresos,Despensa,-32,MXN,-32,MXN,Pan dulce
+07/08/2021,Ingresos,Entretenimiento,-450,MXN,-450,MXN,7gr cannabis sativa
+07/08/2021,Ingresos,Entretenimiento,-450,MXN,-450,MXN,7 gr cannabis indica
+08/08/2021,Ingresos,Restaurante/Bar,-104.5,MXN,-104.5,MXN," 1Prensa francesa, 2 piezas de pan dulce"
+08/08/2021,Ingresos,Reembolsos,47,MXN,47,MXN,Reembolso de gastos
+08/08/2021,Ingresos,Regalos,-5,MXN,-5,MXN,Donación
+09/08/2021,Ingresos,Movilidad,-250,MXN,-250,MXN,Gasolina premium
+09/08/2021,Ingresos,Movilidad,-30,MXN,-30,MXN,Estacionamiento
+09/08/2021,Ingresos,Regalos,-5,MXN,-5,MXN,Donación
+09/08/2021,Ingresos,Reembolsos,450,MXN,450,MXN,Reembolso de gastos
+10/08/2021,Ingresos,Créditos,"-1,112.52",MXN,"-1,112.52",MXN,Tarjeta de crédito Nu
+10/08/2021,Ingresos,Telecomunicaciones,-250,MXN,-250,MXN,TotalPlay
+11/08/2021,Ingresos,Restaurante/Bar,-78,MXN,-78,MXN,Panini vegetariano
+11/08/2021,Ingresos,Despensa,-48,MXN,-48,MXN,5 piezas de pan
+12/08/2021,Ingresos,Restaurante/Bar,-48,MXN,-48,MXN,Bionico
+12/08/2021,Ingresos,Restaurante/Bar,-160,MXN,-160,MXN,2 cervezas artesanales
+13/08/2021,Ingresos,Restaurante/Bar,-121,MXN,-121,MXN,3 tacos veganos
+14/08/2021,Ingresos,Movilidad,-300,MXN,-300,MXN,13 litros premium
+14/08/2021,Ingresos,Movilidad,-228,MXN,-228,MXN,Pago de caseta
+14/08/2021,Ingresos,Movilidad,-99,MXN,-99,MXN,Pago de caseta
+14/08/2021,Ingresos,Movilidad,-20,MXN,-20,MXN,Pago de estacionamiento de Lago de Camecuaro
+14/08/2021,Ingresos,Entretenimiento,-40,MXN,-40,MXN,Pago de entradas a Lago de Camecuaro
+14/08/2021,Ingresos,Restaurante/Bar,-14,MXN,-14,MXN,1 mazapan y 1 bolsa de cacahuates
+14/08/2021,Ingresos,Entretenimiento,-5,MXN,-5,MXN,Entrada al sanitario
+14/08/2021,Ingresos,Restaurante/Bar,-50,MXN,-50,MXN,2 quesadillas de champinones
+14/08/2021,Ingresos,Movilidad,-5,MXN,-5,MXN,Propina por servicio en gasolinera
+15/08/2021,Ahorros,Ahorros,"1,668.62",MXN,"1,668.62",MXN,Ahorro 1Q Agosto
+15/08/2021,Ingresos,NID,-11.31,MXN,-11.31,MXN,Gastos no identificados
+15/08/2021,Ingresos,Depósitos,"5,331.38",MXN,"5,331.38",MXN,Nómina primer mes de agosto
+15/08/2021,Ingresos,Vivienda,"-3,500",MXN,"-3,500",MXN,Pago de renta inmuebles
+15/08/2021,Ingresos,Depósitos,500,MXN,500,MXN,Masaje
+16/08/2021,Ingresos,Restaurante/Bar,-96,MXN,-96,MXN,Pago de dos biónicos
+17/08/2021,Ingresos,Despensa,-559.55,MXN,-559.55,MXN,Despensa
+17/08/2021,Ingresos,Restaurante/Bar,-60,MXN,-60,MXN,2 vasos de fruta
+17/08/2021,Ingresos,Movilidad,-300,MXN,-300,MXN,Gasolina premium
+18/08/2021,Ingresos,Restaurante/Bar,-45,MXN,-45,MXN,Platanitos
+18/08/2021,Ingresos,Restaurante/Bar,-320,MXN,-320,MXN,3 pizzas
+19/08/2021,Ingresos,Salud e Higiene,-186,MXN,-186,MXN,Lavandería
+19/08/2021,Ingresos,Reembolsos,332.78,MXN,332.78,MXN,Reembolso de gastos
+20/08/2021,Ingresos,Restaurante/Bar,-110,MXN,-110,MXN,2 cervezas comerciales
+21/08/2021,Ingresos,Entretenimiento,-450,MXN,-450,MXN,Viaje a Parque Nacional Lago de Camécuaro
+22/08/2021,Ingresos,Restaurante/Bar,-55,MXN,-55,MXN,1 pay de calabaza y 1 agua de guayaba
+22/08/2021,Ingresos,Restaurante/Bar,-25,MXN,-25,MXN,Propina por servicio en restaurante
+23/08/2021,Ingresos,Restaurante/Bar,-101,MXN,-101,MXN,4 tacos veganos
+24/08/2021,Ingresos,Regalos,-5,MXN,-5,MXN,Donación
+25/08/2021,Ingresos,Restaurante/Bar,-100,MXN,-100,MXN,Tacos veganos
+26/08/2021,Ingresos,Licencias,-49,MXN,-49,MXN,Licencia Monefy Pro
+27/08/2021,Ahorros,Comisiones,"1,722",MXN,"1,722",MXN,Ingreso por comisiones
+27/08/2021,Ingresos,Restaurante/Bar,-230,MXN,-230,MXN,Consumo en restaurante
+27/08/2021,Ingresos,Restaurante/Bar,-50,MXN,-50,MXN,Panadería del abuelo
+28/08/2021,Ingresos,Despensa,-475.31,MXN,-475.31,MXN,Despensa
+29/08/2021,Ingresos,Movilidad,-200,MXN,-200,MXN,Gasolina premium
+29/08/2021,Ingresos,Restaurante/Bar,-60,MXN,-60,MXN,Crepa y smoothie
+29/08/2021,Ingresos,Restaurante/Bar,-145,MXN,-145,MXN,Mariscos
+30/08/2021,Ahorros,Ahorros,"1,668.62",MXN,"1,668.62",MXN,Ahorro 2Q Agosto
+30/08/2021,Ingresos,Depósitos,"5,331.39",MXN,"5,331.39",MXN,Ingreso por servicios
+02/09/2021,Ingresos,Restaurante/Bar,-96,MXN,-96,MXN,2 bionicos
+03/09/2021,Ingresos,Restaurante/Bar,-175,MXN,-175,MXN,6 latas de cerveza y 2 churros de grillo
+03/09/2021,Ingresos,Restaurante/Bar,-90,MXN,-90,MXN,3 piezas de hojaldra
+05/09/2021,Ingresos,Restaurante/Bar,-110,MXN,-110,MXN,Desayuno en Cafeto
+05/09/2021,Ingresos,Despensa,-250,MXN,-250,MXN,1 kg de café en grano
+05/09/2021,Ingresos,Restaurante/Bar,-70,MXN,-70,MXN,1 pay de calabaza y 1 pay de frutos rojos
+05/09/2021,Ingresos,Despensa,-420,MXN,-420,MXN,Despensa
+06/09/2021,Ingresos,Despensa,-18,MXN,-18,MXN,2 piezas de pan dulce
+06/09/2021,Ingresos,Salud e Higiene,-93,MXN,-93,MXN,Lavandería
+06/09/2021,Ingresos,Restaurante/Bar,-114,MXN,-114,MXN,5 tacos veganos
+06/09/2021,Ingresos,Reembolsos,159,MXN,159,MXN,Reembolso de gastos
+07/09/2021,Ingresos,Reembolsos,119.91,MXN,119.91,MXN,Reembolso de gastos
+07/09/2021,Ingresos,Movilidad,-348.15,MXN,-348.15,MXN,Gasolina premium
+07/09/2021,Ingresos,Reembolsos,250,MXN,250,MXN,Reembolso de gastos
+07/09/2021,Ingresos,Despensa,-10,MXN,-10,MXN,1/2 kg de tortilla
+08/09/2021,Ingresos,Restaurante/Bar,-112,MXN,-112,MXN,Panini vegetariano
+09/09/2021,Ingresos,Regalos,-5,MXN,-5,MXN,Donación
+10/09/2021,Ingresos,Restaurante/Bar,-316.5,MXN,-316.5,MXN,Consumo en restaurante
+12/09/2021,Ingresos,Restaurante/Bar,-146,MXN,-146,MXN,Consumo en restaurante
+12/09/2021,Ingresos,Restaurante/Bar,-346.5,MXN,-346.5,MXN,Consumo en restaurante
+14/09/2021,Ingresos,Telecomunicaciones,-250,MXN,-250,MXN,TotalPlay
+15/09/2021,Ahorros,Entretenimiento,"-1,200",MXN,"-1,200",MXN,Disposición de ahorro
+15/09/2021,Ingresos,Créditos,"-1,316.32",MXN,"-1,316.32",MXN,Pago de tarjeta de crédito
+15/09/2021,Ingresos,Depósitos,"7,000",MXN,"7,000",MXN,Ingreso por servicios
+15/09/2021,Ingresos,Vivienda,"-3,500",MXN,"-3,500",MXN,Pago de renta inmuebles
+16/09/2021,Ahorros,Comisiones,857,MXN,857,MXN,Ingreso por comisiones
+16/09/2021,Ingresos,Despensa,-54,MXN,-54,MXN,Panadería
+17/09/2021,Ahorros,Ahorros,"1,638.62",MXN,"1,638.62",MXN,Ahorro 1Q Septiembre
+17/09/2021,Ingresos,Movilidad,-300,MXN,-300,MXN,Gasolina premium
+17/09/2021,Ingresos,Salud e Higiene,-186,MXN,-186,MXN,Lavandería
+18/09/2021,Ingresos,Salud e Higiene,-90,MXN,-90,MXN,Auto lavado
+18/09/2021,Ingresos,Regalos,-5,MXN,-5,MXN,Donación
+18/09/2021,Ingresos,Regalos,-150,MXN,-150,MXN,Ramo de flores
+18/09/2021,Ingresos,Restaurante/Bar,-20,MXN,-20,MXN,Nieve en vaso
+20/09/2021,Ingresos,Restaurante/Bar,-110,MXN,-110,MXN,Consumo en restaurante
+20/09/2021,Ingresos,Restaurante/Bar,-100,MXN,-100,MXN,Consumo en restaurante
+21/09/2021,Ingresos,Restaurante/Bar,-170,MXN,-170,MXN,Cerveza
+21/09/2021,Ingresos,Salud e Higiene,-116,MXN,-116,MXN,Farmacia
+23/09/2021,Ingresos,Movilidad,-200,MXN,-200,MXN,Gasolina
+24/09/2021,Ingresos,Despensa,-40,MXN,-40,MXN,Panadería
+26/09/2021,Ingresos,Viajes,"-1,405",MXN,"-1,405",MXN,Viaje a Santa María del Oro
+27/09/2021,Ahorros,Viajes,"-1,500",MXN,"-1,500",MXN,Disposición de ahorro
