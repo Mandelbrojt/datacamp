@@ -16,14 +16,15 @@ library(dplyr)
 library(broom)
 library(readr)
 library(ggfortify)
+library(yardstick)
 ```
 
 
 ```{r Import Required Datasets}
-taiwan_real_estate <- read_fst("/Users/luismoreno/Documents/datacamp/datasets/taiwan_real_estate.fst")
-sp500_yearly_returns <- read_csv(file = "/Users/luismoreno/Documents/datacamp/datasets/sp500_yearly_returns.csv")
-ad_conversion <- read_csv(file = "/Users/luismoreno/Documents/datacamp/datasets/ad_conversion.csv")
-churn <- read_fst("/Users/luismoreno/Documents/datacamp/datasets/churn.fst")
+taiwan_real_estate <- read_fst("/Users/luismoreno/Documents/GitHub/datacamp/datasets/taiwan_real_estate.fst")
+sp500_yearly_returns <- read_csv(file = "/Users/luismoreno/Documents/GitHub/datacamp/datasets/sp500_yearly_returns.csv")
+ad_conversion <- read_csv(file = "/Users/luismoreno/Documents/GitHub/datacamp/datasets/ad_conversion.csv")
+churn <- read_fst("/Users/luismoreno/Documents/GitHub/datacamp/datasets/churn.fst")
 ```
 
 ```{r Scatter Visualization}
@@ -543,5 +544,41 @@ ggplot(prediction_data, aes(time_since_first_purchase, odds_ratio)) +
   geom_hline(yintercept = 1, linetype = "dotted") +
   # Use a logarithmic y-scale
   scale_y_log10()
+```
+
+## Quantifying Logistic Regression Fit  
+
+## Confusion Matrix  
+- It is the basis of all performance metrics for **models with a categorical response**.
+- It contains the **counts of each actual response-predicted response pair**. 
+- There are 4 values in the confusion matrix:
+  - 
+```{r Creating a Confusion Matrix}
+# Get the actual responses from the dataset
+actual_response <- churn$has_churned
+
+# Get the "most likely" responses from the model
+predicted_response <- round(fitted(mdl_churn_vs_relationship))
+
+# Create a table of counts
+outcomes <- table(predicted_response, actual_response)
+
+# See the result
+outcomes
+```
+
+### Measuring Performance Metrics  
+- By converting this to a `yardstick` **confusion matrix object**, you get methods for plotting and extracting performance metrics.  
+- For **logistic regression**, three `yardstick` objects are important: **accuracy, sensitivity, and specificity**.  
+
+```{r Visualizing Performance Metrics}
+# Convert outcomes to a yardstick confusion matrix
+confusion <-  conf_mat(outcomes)
+
+# Plot the confusion matrix
+autoplot(confusion)
+
+# Get performance metrics for the confusion matrix
+summary(confusion, event_level = "second")
 ```
 

@@ -1,0 +1,33 @@
+---
+title: "Intermediate Regression in R"
+author: "Luis Moreno"
+date: "11/24/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Required Packages}
+library(fst)
+```
+
+```{r Required Datasets}
+taiwan_real_estate <- read_fst("/Users/luismoreno/Documents/GitHub/datacamp/datasets/taiwan_real_estate.fst")
+```
+
+# Parallel Slopes  
+## Parallel Slopes in Linear Regressions  
+- When there is **one numeric explanatory variable** and **one categorical explanatory variable** is sometimes called a "`parallel slopes`" linear regression due to the shape of the predictions.  
+
+```{r Creating a Parallel Slope Regression}
+# Fit a linear regression with a numerical and categorical explanatory variables
+mdl_price_vs_both <- lm(price_twd_msq ~ n_convenience + 
+                        house_age_years+0,
+                        data = taiwan_real_estate)
+
+# See the result
+mdl_price_vs_both
+```
+
