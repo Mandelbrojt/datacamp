@@ -11,6 +11,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ```{r Required Packages}
 library(fst)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+library(moderndive)
+library(broom)
 ```
 
 ```{r Required Datasets}
@@ -18,12 +23,14 @@ taiwan_real_estate <- read_fst("/Users/luismoreno/Documents/GitHub/datacamp/data
 ```
 
 # Parallel Slopes  
-## Parallel Slopes in Linear Regressions  
+## Parallel Slopes Linear Regression  
 - When there is **one numeric explanatory variable** and **one categorical explanatory variable** is sometimes called a "`parallel slopes`" linear regression due to the shape of the predictions.  
+- `parallel slopes models` allow for **different intercepts**, but **force all lines to have the same slope**.  
 
-```{r Creating a Parallel Slope Regression}
+```{r Creating a Parallel Slopes Model}
 # Fit a linear regression with a numerical and categorical explanatory variables
-mdl_price_vs_both <- lm(price_twd_msq ~ n_convenience + 
+mdl_price_vs_both <- lm(price_twd_msq ~ 
+                        n_convenience + 
                         house_age_years+0,
                         data = taiwan_real_estate)
 
@@ -31,3 +38,120 @@ mdl_price_vs_both <- lm(price_twd_msq ~ n_convenience +
 mdl_price_vs_both
 ```
 
+```{r Creating a Regreesion Table for Parallel Slopes Model}
+get_regression_table(mdl_price_vs_both)
+```
+
+## Predicting with Parallel Slopes  
+```{r Parallel Slopes Prediction Workflow}
+# STEP 1: Make a grid of explanatory data
+explanatory_data <- expand_grid(
+  # Set n_convenience to zero to ten
+  n_convenience = seq(0, 10, 1),
+  # Set house_age_years to the unique values of that variable
+  house_age_years = unique(taiwan_real_estate$house_age_years)
+)
+
+# STEP 2: Add predictions to the data frame
+prediction_data <- explanatory_data %>% 
+  mutate(
+    price_twd_msq = predict(
+      mdl_price_vs_both, 
+      explanatory_data))
+
+# STEP 3: Create a plot with a layer of predictions.¿
+taiwan_real_estate %>% 
+  ggplot(aes(n_convenience,
+             price_twd_msq,
+             color = house_age_years)) +
+  geom_point() +
+  geom_parallel_slopes(se = FALSE) +
+  # Add points using prediction_data, with size 5 and shape 15
+  geom_point(
+    data = prediction_data,
+    size = 5,
+    shape = 15
+  )
+```
+
+## Manually Calculating Predictions  
+- For the `parallel slopes` case is that the **intercept is different for each category of the categorical explanatory variable**. That means you need to consider the case when each each category occurs separately.  
+
+```{r Manually Calculating Predictions}
+# STEP 1: Get coefficients, slope and intercepts
+
+# Get the coefficients from mdl_price_vs_both
+coeffs <- coefficients(mdl_price_vs_both)
+
+# Extract the slope coefficient
+slope <- coeffs[1]
+
+# Extract the intercept coefficient for 0 to 15
+intercept_0_15 <- coeffs[2]
+
+# Extract the intercept coefficient for 15 to 30
+intercept_15_30 <- coeffs[3]
+
+# Extract the intercept coefficient for 30 to 45
+intercept_30_45 <- coeffs[4]
+
+# STEP 2: Add columns to explanatory data
+# Consider the case when each category occurs separately
+prediction_data <- explanatory_data %>% 
+  mutate(
+    # Consider the 3 cases to choose the intercept
+    intercept = case_when(
+      house_age_years == "0 to 15" ~ intercept_0_15,
+      house_age_years == "15 to 30" ~ intercept_15_30,
+      house_age_years == "30 to 45" ~ intercept_30_45
+    ),
+    
+    # Manually calculate the predictions
+    price_twd_msq = intercept + slope * n_convenience
+  )
+
+# See the results
+prediction_data
+```
+
+## Assesing Model Performance  
+- The `coefficient of determination` or `R-squared`, measures how good the regression's prediction line fits the observed values.  
+- The `residual standard error` or `RSE`, is the typical size of the residuals.  
+- Including too many explanatory variables can lead to `overfitting`. This means that the model is optimized to **provide the best fit for that particular data set, but no longer reflects the general population**.  
+- The `adjusted coefficient of determination` includes a small penalty term for each additional explanatory variable to compensate for this effect.  
+
+```{r Comparing Coefficients of Determination}
+mdl_price_vs_conv <- lm(price_twd_msq ~
+                        n_convenience,
+                        data = taiwan_real_estate)
+
+mdl_price_vs_age <- lm(price_twd_msq ~
+                       house_age_years+0,
+                       data = taiwan_real_estate)
+
+mdl_price_vs_conv %>% 
+  # Get the model-level coefficients
+  glance() %>% 
+  # Select the coeffs of determination
+  select(r.squared, adj.r.squared)
+
+# Get the coeffs of determination for mdl_price_vs_age
+mdl_price_vs_age %>% 
+  glance() %>% 
+  select(r.squared, adj.r.squared)
+
+# Get the coeffs of determination for mdl_price_vs_both
+mdl_price_vs_both %>% 
+  glance() %>% 
+  select(r.squared, adj.r.squared)
+```
+
+```{r Comparing Residual Standard Error}
+
+```
+
+# Functions Reference  
+- `stats::lm()`: 
+- `tidyr::expand_grid()`: 
+- `broom::glance()`: retrieves regression model-level metrics as a data frame.  
+- `dplyr::pull()`: extracts a specific metric from a regression model.  
