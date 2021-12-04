@@ -1,0 +1,96 @@
+---
+title: "Improving the performance of an investment fund"
+author: "Luis Moreno"
+date: "12/4/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Report Content
+1. Show performance comparison between Bitcoin, S&P 500 and Gold price.
+
+2. Analyze Bitcoin's returns and volatility profile.
+  - Could Bitcoin help improve the performance of a portfolio?
+  - Could Bitcoin be used as a hedge versus inflation?
+
+3. The CFO is looking to **lower volatility in the fund**. Explore building a portfolio using some or all of these assets. Make a recommendation that minimizes overall risk.
+
+# Packages
+```{r Required Packages, message=FALSE}
+library(tidyverse)
+#install.packages("quantmod")
+library(quantmod)
+```
+
+# Datasets
+```{r Bitcoin dataset, message=FALSE}
+# Read Bitcoin data from CSV file
+btc <- readr::read_csv("./bitcoin_usd.csv")
+
+# Create a xts object for Bitcoin data
+btc_xts <- as.xts(btc %>% 
+                  select(open, high, low, close, volume), 
+                  order.by = as.Date(btc$date))
+```
+
+```{r S&P 500 dataset, message=FALSE}
+# Read S&P 500 data from CSV file
+sp500 <- readr::read_csv("./sp500.csv")
+
+# Create a xts object for S&P 500 data
+sp500_xts <- as.xts(sp500 %>%
+                    select(open, high, low, close, volume),
+                    order.by = as.Date(sp500$date))
+```
+
+```{r Gold dataset, message=FALSE}
+
+```
+
+```{r CPI dataset, message=FALSE}
+
+```
+
+# Visualizing Price Charts
+## Bitcoin Candlestick Chart
+```{r Bitcoin Chart, echo=FALSE}
+btc_chart <- chartSeries(to.monthly(btc_xts),
+              type = "candlesticks",
+              up.col = "white",
+              dn.col = "black",
+              log.scale = TRUE,
+              theme = chartTheme("white"),
+              name = "BTCUSD")
+```
+
+## S&P 500 Candlestick Chart
+```{r SP500 Chart, echo=FALSE}
+sp500_chart <- chartSeries(to.monthly(sp500_xts),
+              type = "candlesticks",
+              up.col = "white",
+              dn.col = "black",
+              log.scale = TRUE,
+              theme = chartTheme("white"),
+              name = "S&P 500")
+```
+
+```{r Visualizing Time Series, include =FALSE}
+gold_lplot = 
+  ggplot(monthly_data, aes(x = date, y = gold_usd)) + 
+  geom_line() +
+  scale_y_log10()
+
+gold_lplot
+
+cpi_lplot = 
+  ggplot(monthly_data, aes(x = date, y = cpi_us)) +
+  geom_line() +
+  scale_y_log10()
+
+cpi_lplot
+```
+
+# Visualizing Performance
